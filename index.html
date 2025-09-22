@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Adventures - The Beginning</title>
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div id="controls">
+            <button id="leftBtn"> &larr; </button>
+            <button id="jumpBtn"> Jump </button>
+            <button id="rightBtn"> &rarr; </button>
+        </div>
+    </div>
+
+    <!-- Dialog for level completion -->
+    <div id="dialog-overlay" class="hidden">
+        <div id="completion-dialog">
+            <h2 id="dialog-title">Adventure Complete!</h2>
+            <p id="dialog-message">You have successfully navigated through the first challenge.</p>
+            <button id="nextLevelBtn">Next Adventure</button>
+            <button id="closeDialogBtn">Close</button>
+        </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

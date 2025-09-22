@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Hide scrollbars */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #222; /* Dark background */
+    font-family: Arial, sans-serif;
+    color: #eee;
+}
+
+#game-container {
+    position: relative;
+    width: 960px; /* Example resolution for pixel art games */
+    height: 540px; /* 16:9 aspect ratio */
+    border: 2px solid #555;
+    background-color: #333;
+    overflow: hidden; /* Important for preventing player from drawing outside */
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated; /* Essential for pixel art games */
+    background-color: #87CEEB; /* Day sky blue */
+}
+
+#controls {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+#controls button {
+    padding: 15px 25px;
+    font-size: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s;
+    user-select: none; /* Prevent text selection on mobile */
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+}
+
+#controls button:active {
+    background-color: #45a049;
+}
+
+/* Completion Dialog Styling */
+#dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#completion-dialog {
+    background-color: #444;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 90%;
+}
+
+#completion-dialog h2 {
+    color: #FFD700; /* Gold */
+    margin-bottom: 15px;
+}
+
+#completion-dialog p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+#completion-dialog button {
+    padding: 12px 25px;
+    margin: 0 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#nextLevelBtn {
+    background-color: #007bff; /* Blue */
+    color: white;
+}
+
+#nextLevelBtn:hover {
+    background-color: #0056b3;
+}
+
+#closeDialogBtn {
+    background-color: #6c757d; /* Gray */
+    color: white;
+}
+
+#closeDialogBtn:hover {
+    background-color: #545b62;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Landscape mode for mobile */
+@media screen and (max-width: 960px) and (orientation: landscape) {
+    #game-container {
+        width: 100vw;
+        height: 100vh;
+        border: none;
+    }
+    canvas {
+        /* Potentially adjust canvas scaling or letterboxing */
+    }
+    #controls {
+        font-size: 16px;
+        padding: 5px;
+    }
+    #controls button {
+        padding: 10px 15px;
+    }
+}
